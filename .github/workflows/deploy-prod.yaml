@@ -1,0 +1,20 @@
+name: gradle-example
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    permissions:
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to xquare
+        uses: team-xquare/xquare-deployment-action@master
+        with:
+          environment: prod
+          access_key: ${{ secrets.XQUARE_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}

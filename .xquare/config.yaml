@@ -1,0 +1,8 @@
+config:
+  name: vertex-api
+  prefix: "/vertex-api"
+  service_type: be
+  domain:
+    prod: vertex-api.xquare.app
+    stag: vertex-api-stag.xquare.app
+  port: 8000
