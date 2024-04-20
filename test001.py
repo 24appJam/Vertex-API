@@ -25,7 +25,7 @@ prompt_data = PromptData(keyword='남친', content='남친이랑, 이별함', mo
 
 @app.post("/process-prompt")
 def process_prompt(prompt_data: PromptData = Body()):
-    prompt = f"{prompt_data.keyword}가 키워드인 {prompt_data.content}내용을 가지고 {prompt_data.mood}분위기를 가진 노래를 생성해줘 그런데 {prompt_data.additional}을 참고해서 노래 가사를 작성해주고 마지막에 제목도 정해줘"
+    prompt = f"{prompt_data.keyword}가 키워드인 {prompt_data.content}내용을 가지고 {prompt_data.mood}분위기를 가진 노래를 생성해줘 그런데 {prompt_data.additional}을 참고해서 노래 가사를 작성해줘"
     generated_text = generate(prompt)
 
     response = {
